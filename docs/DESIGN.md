@@ -11,7 +11,7 @@
 ## Module Details
 
 DataStructures: 
-input: format, shape, size
+* input: format, shape, size (tuple)
 
 <a name="mastercontrol"></a>
 #### Master Control
@@ -48,6 +48,10 @@ input: format, shape, size
 
 * Considersation: if we're using Master Control to hide what's inside from commandline, then perhaps output should return something rather than print to commandline?
 
+* Unit Testing: RSpec is recommended but can use anything
+
 * CommandLineTool Frameworks for Python, [link](http://nvie.com/posts/writing-a-cli-in-python-in-under-60-seconds/): pipsi
+
+* ArgParse and OptParse make CLI Frameworks unnecessary
 
 * Python REST (Web Service) Frameworks, [Stackoverflow link](http://stackoverflow.com/questions/713847/recommendations-of-python-rest-web-services-framework): Flask, [Cherrypy](http://blaag.haard.se/Simple-REST-ful---ish--exposure-of-Python-APIs/)
