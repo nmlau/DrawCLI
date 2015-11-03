@@ -31,10 +31,7 @@ class Spiral(Shape):
       y1 = y
     elif (direction == 3):
       x1 = x
-      y1 = y - remaining      
-    else:
-      x1 = x
-      y1 = y
+      y1 = y - remaining
 
     self.canvas.drawLine(x,y,x1,y1)
 

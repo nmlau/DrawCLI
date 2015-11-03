@@ -20,9 +20,19 @@ Input validation could be given more specific errors
 
 Using Pdb for debugger
 
+Would be using git branches if I were collaborating with others
+
+This is my first time using python beyond a quick one off interview question
+
 ==================== Todo ====================
 
+clean up output
+need to print | when going vertically
+
 input validation should ignore cpas
+comment
+
+Done:
 .gitignore *.pyc files
 
 ==================== Learned ====================

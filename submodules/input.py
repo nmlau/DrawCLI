@@ -5,8 +5,6 @@ import argparse
 def parseInput():
   input = parseOpts() # returns (shape, size, format)
   isValidInput = validateInput(input)
-  if (isValidInput == False):
-    raise ValueError("Invalid Input: " + str(input))
   return input
 
 def parseOpts():
@@ -29,7 +27,7 @@ def validateInput(input):
 
   inputIsValid = True
   # Validate size
-  if (int(size) < 0):
+  if (int(size) < 1):
     print "Invalid Size: " + size
     inputIsValid = False
   
@@ -42,5 +40,9 @@ def validateInput(input):
   if (format != 'ascii'): # || format != nvg || format != etc
     print "Invalid Format: " + format
     inputIsValid = False
+
+  # Check Flag
+  if (inputIsValid == False):
+    raise ValueError("Invalid Input: " + str(input))
 
   return inputIsValid
