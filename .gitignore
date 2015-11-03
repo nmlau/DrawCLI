@@ -1,1 +1,3 @@
+*.pyc
+submodules/*.pyc
 docs/notes.txt
