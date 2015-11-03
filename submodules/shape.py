@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import pdb
 from submodules import canvas
 
 class Shape():
@@ -11,14 +12,34 @@ class Shape():
 
 class Spiral(Shape):
   def draw(self):
-    self.draw_helper(self.size-1,0)
+    starting = self.size-1
+    self.draw_helper(starting, 0, starting, 0)
     return self.canvas
   
-  def draw_helper(self,remaining, direction):
-    self.canvas.drawLine(remaining,0,0,0)
+  def draw_helper(self, x, y, remaining, direction):
+    # pdb.set_trace()
+
+    direction = direction % 4
+    if (direction == 0):
+      x1 = x - remaining
+      y1 = y
+    elif (direction == 1):
+      x1 = x
+      y1 = y + remaining
+    elif (direction == 2):
+      x1 = x + remaining
+      y1 = y
+    elif (direction == 3):
+      x1 = x
+      y1 = y - remaining      
+    else:
+      x1 = x
+      y1 = y
+
+    self.canvas.drawLine(x,y,x1,y1)
 
     if remaining > 0:
-      draw_helper(remaining-1, direction+1)
+      self.draw_helper(x1, y1, remaining-1, direction+1)
     else:
       return 0  
   
