@@ -11,7 +11,7 @@
 ## Module Details
 
 DataStructures: 
-* input: format, shape, size (tuple)
+* input: shape, size, format (tuple)
 
 <a name="mastercontrol"></a>
 #### Master Control
