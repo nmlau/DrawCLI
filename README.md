@@ -1,7 +1,19 @@
 Takes input: Shape, Size, Format
 
-Example: python draw -s spiral -t 11 -f ascii
+Format: python draw.py <shape> <size> -option 
+
+Example: python draw.py spiral 10 -f ascii
+
 Prints:
++--------+
+|         
+| +----+  
+| |    |  
+| | ++ |  
+| |  | |  
+| +--+ |  
+|      |  
++------+  
 
 
 ==================== Notes ====================
@@ -24,22 +36,38 @@ Would be using git branches if I were collaborating with others
 
 This is my first time using python beyond a quick one off interview question
 
+ArgParse has replaced the deprecated Python 2.x OptParse
+
+Biggest bug I ran into: naming parseArg() return value test instead of input..."typeerror 'builtin_function_or_method' object has no attribute '__getitem__'"
+
 ==================== Todo ====================
 
-clean up output
-need to print | when going vertically
-
-input validation should ignore cpas
+add tests
 comment
 
 Done:
+change to parseArgs
+input validation should ignore caps
 .gitignore *.pyc files
+clean up output
+need to print | when going vertically
 
 ==================== Learned ====================
 
+str.lower() is faster than the alternative (strcmp?) for ignoring case
+
 False not false
 int() and str() to cast
+
 print('.'), # this will still print a space, but not a newline
+But I like this one more to get rid of space
+>>> for i in xrange(20):
+...     s += 'a'
+... 
+>>> print s
+aaaaaaaaaaaaaaaaaaaa
+
+
 
 SO link, http://goo.gl/qlnvsi
 If by "array" you actually mean a Python list, you can use

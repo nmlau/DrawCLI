@@ -15,4 +15,4 @@ if __name__ == '__main__':
   #   shape = shape.Square(input)
 
   canvas = shape.draw()
-  canvas.output() # output(canvas)
+  output.output(canvas)

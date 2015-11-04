@@ -1,23 +1,37 @@
 #!/usr/bin/env python
+import pdb
 import optparse
 import argparse
 
 def parseInput():
-  input = parseOpts() # returns (shape, size, format)
+  input = parseArgs()
+  # input = parseOpts() # returns (shape, size, format)
   isValidInput = validateInput(input)
   return input
 
-def parseOpts():
-  optionParser = optparse.OptionParser()
-  optionParser.add_option('--shape', '-s', default="spiral")
-  optionParser.add_option('--size', '-t', default="0")
-  optionParser.add_option('--format', '-f', default="ascii")
-  options, arguments = optionParser.parse_args()
-  print '%s %s %s' % (options.shape, options.size, options.format)
-  return (options.shape, options.size, options.format)
+# def parseOpts():
+#   optionParser = optparse.OptionParser()
+#   optionParser.add_option('--shape', '-s', default="spiral")
+#   optionParser.add_option('--size', '-t', default="0")
+#   optionParser.add_option('--format', '-f', default="ascii")
+#   options, arguments = optionParser.parse_args()
+
+#   # pdb.set_trace()
+#   #changes to lower so we can ignore caps (is this the best place to do this?)
+#   # print '%s %s %s' % (options.shape, options.size, options.format)
+#   return (options.shape.lower(), options.size.lower(), options.format.lower())
 
 def parseArgs():
-  return 0
+  argParser = argparse.ArgumentParser()
+  argParser.add_argument("shape", help="choose what shape you want drawn")
+  argParser.add_argument("size", help="choose the size of the shape")
+  argParser.add_argument("-f", "--format", help="choose the format", default="ascii")
+
+  arguments = argParser.parse_args()
+
+  # Changes to lower so we can ignore caps (is this the best place to do this?)
+  # print '%s %s %s' % (arguments.shape.lower(), arguments.size.lower(), arguments.format.lower())
+  return (arguments.shape.lower(), arguments.size.lower(), arguments.format.lower())
   
 def validateInput(input):
   # takes tuple (shape, size, format)
