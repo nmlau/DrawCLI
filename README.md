@@ -46,3 +46,25 @@ If by "array" you actually mean a Python list, you can use
 a = [0] * 10
 or
 a = [None] * 10
+
+==================== Problem ====================
+
+Create a command line tool to draw spirals. Just print the output to console. They’re just ASCII characters (dash -, pipe |, and plus +).
+
+The program should be object oriented. Currently it only draws spirals, but the tool will eventually draw more things like rectangle, triangle, etc and it will not only draw it as ASCII, it will draw as SVG and other formats too. The drawing functionalities will also be exposed via web application and REST API. Your class design should take into account those future requirements so that it’s easy to add those functionalities. Write down your design rationale on the file DESIGN.md on the root of the project directory using Markdown format.
+
+The image below shows the output of spiral 6, spiral 11, and spiral 17 from left to right.spiral 6 can be ruby spiral.rb 6 or whatever is convenient for your programming language. Use git to version control the code as you work on it. Just zip the project directory (git repo included) and send us the zip. Follow all the best practices that you know of. No tests are needed, but bonus points if you have them.
+
+==================== Followup ====================
+
+Here's the feedback --
+
+I'm not sure why REST API is needed. I'd like to know the reasoning behind that.
+
+He can continue with the code. There's no need to use CLI framework because it's very simple, but it's up to him. The code should have tests. RSpec is preferable, but anything goes"
+
+==================== Answers ====================
+
+> I'm not sure why REST API is needed. I'd like to know the reasoning behind that.
+
+> ...SVG and other formats too. The drawing functionalities will also be exposed via web application and REST API. Your class design should...
