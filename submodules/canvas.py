@@ -7,7 +7,8 @@ class Canvas():
   # Draws '-' or '|' between (x,y) and (x1,y1)
   # Or shades in everything between (x,y) and (x1,y1) if (x-x1 != 0 and y-y1 != 0)
   def drawLine(self, x, y, x1, y1):
-    # pdb.set_trace()
+
+    # This could be all be done within the range loops by calculating deltas, but this is more clear
     if (x < x1):
       xStart = x
       xEnd = x1

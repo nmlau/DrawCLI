@@ -4,5 +4,5 @@ import pdb
 from submodules import canvas
 
 def output(canvas):
-  str = canvas.output()
-  print str
+  stdout = canvas.output()
+  print stdout
