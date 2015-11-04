@@ -55,3 +55,19 @@ DataStructures:
 * ArgParse and OptParse make CLI Frameworks unnecessary
 
 * Python REST (Web Service) Frameworks, [Stackoverflow link](http://stackoverflow.com/questions/713847/recommendations-of-python-rest-web-services-framework): Flask, [Cherrypy](http://blaag.haard.se/Simple-REST-ful---ish--exposure-of-Python-APIs/)
+
+*Could split up test.py into respective submodules, but its reasonably short
+
+*Can validate parameters for every module, but I think that's overkill... just input module will do
+
+*Can do imports better, might not want to use input since it's a keyword
+
+*No switch/case in python, will use elifs for now
+
+*Input validation could be given more specific errors
+
+*Would be using git branches if I were collaborating with others
+
+*Change shapes to using a factory?
+
+*Unit Testing: RSpec is recommended but can use anything

@@ -16,9 +16,10 @@ class Spiral(Shape):
     self.draw_helper(starting, 0, starting, 0)
     return self.canvas
   
+  # Recursively draws lines that are one shorter, and go in a different direction in the following pattern: left, down, right, up
   def draw_helper(self, x, y, remaining, direction):
-    # pdb.set_trace()
 
+    # direction 0 is left, 1 is down, 2 is right, 3 is up
     direction = direction % 4
     if (direction == 0):
       x1 = x - remaining
@@ -38,13 +39,12 @@ class Spiral(Shape):
     if remaining > 0:
       self.draw_helper(x1, y1, remaining-1, direction+1)
     else:
-      return 0  
-  
+      return 0
   def name(self):
     print ("Spiral, of size: " + self.size)
   
+  # takes input (shape, size, format)
   def __init__(self, input):
-    # takes input (shape, size, format)
     self.shape = input[0]
     self.size = int(input[1])
     self.format = input[2]
@@ -56,10 +56,10 @@ class Square(Shape):
     return self.canvas
   def name(self):
     print ("Square, of size: " + self.size)
+  # takes input (shape, size, format)
   def __init__(self, input):
-    # takes input (shape, size, format)
     self.shape = input[0]
-    self.size = input[1]
+    self.size = int(input[1])
     self.format = input[2]
 
     self.canvas = canvas.Canvas(self.size, self.size, self.format)

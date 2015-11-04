@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 import pdb
+
 import optparse
 import argparse
 
 def parseInput():
-  input = parseArgs()
-  # input = parseOpts() # returns (shape, size, format)
+  input = parseArgs() # returns (shape, size, format)
   isValidInput = validateInput(input)
   return input
 

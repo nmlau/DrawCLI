@@ -1,5 +1,8 @@
 #!/usr/bin/env python
+import pdb
+
 from submodules import canvas
 
 def output(canvas):
-  canvas.output()
+  str = canvas.output()
+  print str

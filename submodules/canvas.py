@@ -38,19 +38,20 @@ class Canvas():
             self.grid[i][j] = '-'
           elif (direction == 'vertical'):
             self.grid[i][j] = '|'
-    return 0
+    return
 
+  # Prints output to commandline
   def output(self):
+    string = ''
     for x in range(self.width):
-      string = ''
+      line = ''
       for y in range(self.height):
         if (str(self.grid[y][x]) == '0'):
-          string += ' '
+          line += ' '
         else:
-          string += str(self.grid[y][x])
-        # print(self.grid[y][x]), 
-      print(string)
-    return 0
+          line += str(self.grid[y][x])
+      string += line + '\n'
+    return string
 
   def __init__(self, height, width, format):
     self.height = int(height)
