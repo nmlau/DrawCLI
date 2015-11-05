@@ -23,23 +23,19 @@ Example: python draw.py spiral 10 -f ascii
 Output:
 
 +--------+
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-|&nbsp;+----+&nbsp;&nbsp;
-|&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-|&nbsp;|&nbsp;++&nbsp;|&nbsp;&nbsp;
-|&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-|&nbsp;+--+&nbsp;|&nbsp;&nbsp;
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-+------+&nbsp;&nbsp;
 
-'''
-+--------+
-|         
-| +----+  
-| |    |  
-| | ++ |  
-| |  | |  
-| +--+ |  
-|      |  
-+------+  
-'''
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+|&nbsp;+----+&nbsp;&nbsp;
+
+|&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+
+|&nbsp;|&nbsp;++&nbsp;|&nbsp;&nbsp;
+
+|&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
+
+|&nbsp;+--+&nbsp;|&nbsp;&nbsp;
+
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+
++------+&nbsp;&nbsp;
