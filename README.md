@@ -18,24 +18,8 @@ optional arguments:
 
 ## Example
 
-Example: python draw.py spiral 10 -f ascii
+Example: python draw.py spiral 67 -f ascii
 
 Output:
 
-+--------+
-
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-|&nbsp;+----+&nbsp;&nbsp;
-
-|&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-
-|&nbsp;|&nbsp;++&nbsp;|&nbsp;&nbsp;
-
-|&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-
-|&nbsp;+--+&nbsp;|&nbsp;&nbsp;
-
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-
-+------+&nbsp;&nbsp;
+![alt text](docs/example.png "Example Spiral")
