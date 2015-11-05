@@ -4,9 +4,9 @@ DRAW(1)
 
 Draw
 
-### Synposis
+### Usage
 
-usage: draw.py [-h] [-f FORMAT] shape size
+draw.py [-h] [-f FORMAT] shape size
 
 positional arguments:
 * shape: choose what shape you want drawn
