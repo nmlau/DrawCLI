@@ -2,44 +2,31 @@
 import pdb
 
 class Canvas():
-
   # Draws '+' at (x,y) and (x1,y1)
   # Draws '-' or '|' between (x,y) and (x1,y1)
   # Or shades in everything between (x,y) and (x1,y1) if (x-x1 != 0 and y-y1 != 0)
   def drawLine(self, x, y, x1, y1):
+    if (x > x1):
+      temp = x
+      x = x1
+      x1 = temp
 
-    # This could be all be done within the range loops by calculating deltas, but this is more clear
-    if (x < x1):
-      xStart = x
-      xEnd = x1
+    if (y > y1):
+      temp = y
+      y = y1
+      y1 = temp
+
+    if (x == x1): # vertical line
+      for j in range(y+1,y1):
+        self.grid[x][j] = '|'
+    elif (y == y1): # horizontal line
+      for i in range(x+1,x1):
+        self.grid[i][y] = '-'
     else:
-      xStart = x1
-      xEnd = x
+      raise ValueError('Invalid Coordinates')
 
-    if (y < y1):
-      yStart = y
-      yEnd = y1
-    else:
-      yStart = y1
-      yEnd = y
-
-    # Need to track direction so that canvas knows whether to draw '-' or '|'
-    direction = 'vertical'
-    if (yStart - yEnd == 0):
-      direction = 'horizontal'
-
-    for i in range(xStart,xEnd+1):
-      for j in range(yStart,yEnd+1):
-        if (i == x and j == y):
-          self.grid[i][j] = '+'
-        elif (i == x1 and j == y1):
-          self.grid[i][j] = '+'
-        else:
-          if (direction == 'horizontal'):
-            self.grid[i][j] = '-'
-          elif (direction == 'vertical'):
-            self.grid[i][j] = '|'
-    return
+    self.grid[x][y] = '+'
+    self.grid[x1][y1] = '+'
 
   # Prints output to commandline
   def output(self):
@@ -47,18 +34,14 @@ class Canvas():
     for x in range(self.width):
       line = ''
       for y in range(self.height):
-        if (str(self.grid[y][x]) == '0'):
-          line += ' '
-        else:
-          line += str(self.grid[y][x])
+        line += str(self.grid[y][x])
       string += line + '\n'
     return string
 
   def __init__(self, height, width, format):
-    self.height = int(height)
-    self.width = int(width)
+    self.height = height
+    self.width = width
     self.format = format
     self.grid = []
     for i in range(self.height):
-      temp = [0] * self.width
-      self.grid.append(temp)
+      self.grid.append([' '] * self.width)
