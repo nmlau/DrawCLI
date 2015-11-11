@@ -16,6 +16,8 @@ Change shapes to using a factory?
 
 Unit Testing: RSpec is recommended but can use anything
 
+Shape.Name() didn't work because it was a print rather than return...
+
 ==================== Old Notes ====================
 
 Option Parser is fine for now, but to get closer to what they're asking for I should bring in ArgParse
@@ -33,6 +35,12 @@ ArgParse has replaced the deprecated Python 2.x OptParse
 Biggest bug I ran into: naming parseArg() return value test instead of input..."typeerror 'builtin_function_or_method' object has no attribute '__getitem__'"
 
 ==================== Todo ====================
+
+Cleaning up:
+Fix grid being built y by x
+Make all modules into classes
+Redo Canvas draw line tests
+Redo canvas plot points
 
 Done:
 add tests

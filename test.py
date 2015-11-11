@@ -3,8 +3,8 @@ import pdb
 
 import draw
 from submodules import input
-from submodules import shape
 from submodules import canvas
+from submodules import shape
 from submodules import output
 
 import unittest
@@ -12,9 +12,8 @@ import unittest
 class TestDraw(unittest.TestCase):
 
   def test_flow(self):
-    sampleInput = ('spiral', '10', 'ascii')
-    isValidInput = input.validateInput(sampleInput)
-    self.assertEqual(isValidInput, True)
+    sampleInput = ('spiral', 10, 'ascii')
+    input.validateInput(sampleInput)
 
     spiral = shape.Spiral(sampleInput)
     self.assertEqual(spiral.shape, 'spiral')
@@ -30,42 +29,39 @@ class TestDraw(unittest.TestCase):
     self.assertEqual(sampleCanvas.output(), string)
 
   def test_input(self):
-    sampleInput = ('spiral', '10', 'ascii')
-    self.assertEqual(input.validateInput(sampleInput), True)
-
-    sampleInput = ('spiral', '-5', 'ascii')
+    sampleInput = ('spiral', -5, 'ascii')
     self.assertRaises(ValueError, input.validateInput, sampleInput)
 
-    sampleInput = ('spiral', '0', 'ascii')
+    sampleInput = ('spiral', 0, 'ascii')
     self.assertRaises(ValueError, input.validateInput, sampleInput)
 
-    sampleInput = ('squiggly', '10', 'ascii')
+    sampleInput = ('squiggly', 10, 'ascii')
     self.assertRaises(ValueError, input.validateInput, sampleInput)
 
-    sampleInput = ('spiral', '10', 'crayon')
+    sampleInput = ('spiral', 10, 'crayon')
     self.assertRaises(ValueError, input.validateInput, sampleInput)
 
   def test_shape(self):
-    sampleInput = ('spiral', '49', 'ascii')
+    sampleInput = ('spiral', 49, 'ascii')
     spiral = shape.Spiral(sampleInput)
     self.assertEqual(spiral.shape, 'spiral')
     self.assertEqual(spiral.size, 49)
     self.assertEqual(spiral.format, 'ascii')
 
   def test_canvas(self):
-    sampleInput = ('spiral', '1', 'ascii')
+    sampleInput = ('spiral', 1, 'ascii')
     spiral = shape.Spiral(sampleInput)
     sampleCanvas = spiral.draw()
     string = "+\n"
     self.assertEqual(sampleCanvas.output(), string)
 
-    sampleInput = ('spiral', '15', 'ascii')
+    sampleInput = ('spiral', 15, 'ascii')
     spiral = shape.Spiral(sampleInput)
     sampleCanvas = spiral.draw()
     string = "+-------------+\n|              \n| +---------+  \n| |         |  \n| | +-----+ |  \n| | |     | |  \n| | | +-+ | |  \n| | | + | | |  \n| | |   | | |  \n| | +---+ | |  \n| |       | |  \n| +-------+ |  \n|           |  \n+-----------+  \n               \n"
     self.assertEqual(sampleCanvas.output(), string)
 
-    sampleInput = ('spiral', '40', 'ascii')
+    sampleInput = ('spiral', 40, 'ascii')
     spiral = shape.Spiral(sampleInput)
     sampleCanvas = spiral.draw()
     string = "+--------------------------------------+\n|                                       \n| +----------------------------------+  \n| |                                  |  \n| | +------------------------------+ |  \n| | |                              | |  \n| | | +--------------------------+ | |  \n| | | |                          | | |  \n| | | | +----------------------+ | | |  \n| | | | |                      | | | |  \n| | | | | +------------------+ | | | |  \n| | | | | |                  | | | | |  \n| | | | | | +--------------+ | | | | |  \n| | | | | | |              | | | | | |  \n| | | | | | | +----------+ | | | | | |  \n| | | | | | | |          | | | | | | |  \n| | | | | | | | +------+ | | | | | | |  \n| | | | | | | | |      | | | | | | | |  \n| | | | | | | | | +--+ | | | | | | | |  \n| | | | | | | | | |  | | | | | | | | |  \n| | | | | | | | | ++ | | | | | | | | |  \n| | | | | | | | |    | | | | | | | | |  \n| | | | | | | | +----+ | | | | | | | |  \n| | | | | | | |        | | | | | | | |  \n| | | | | | | +--------+ | | | | | | |  \n| | | | | | |            | | | | | | |  \n| | | | | | +------------+ | | | | | |  \n| | | | | |                | | | | | |  \n| | | | | +----------------+ | | | | |  \n| | | | |                    | | | | |  \n| | | | +--------------------+ | | | |  \n| | | |                        | | | |  \n| | | +------------------------+ | | |  \n| | |                            | | |  \n| | +----------------------------+ | |  \n| |                                | |  \n| +--------------------------------+ |  \n|                                    |  \n+------------------------------------+  \n                                        \n"
@@ -73,22 +69,28 @@ class TestDraw(unittest.TestCase):
 
   def test_canvas_drawLine(self):
     sampleCanvas = canvas.Canvas(5,5,'ascii')
-    sampleCanvas.drawLine(0,0,4,4)
     string = '+||||\n|||||\n|||||\n|||||\n||||+\n'
-    self.assertEqual(sampleCanvas.output(), string)
+    self.assertRaises(ValueError, sampleCanvas.drawLine, 0,0,4,4)
 
+    # test horizontal
     sampleCanvas = canvas.Canvas(10,5,'ascii')
+    pdb.set_trace()
     sampleCanvas.drawLine(0,0,9,0)
     string = "+--------+\n          \n          \n          \n          \n"
+    print string
     self.assertEqual(sampleCanvas.output(), string)
 
-    sampleCanvas = canvas.Canvas(5,5,'ascii')
-    sampleCanvas.drawLine(0,0,4,4)
-    string = '+||||\n|||||\n|||||\n|||||\n||||+\n'
+    # test vertical
+    sampleCanvas = canvas.Canvas(10,5,'ascii')
+    sampleCanvas.drawLine(0,0,0,4)
+    string = "+         \n|         \n|         \n|         \n+         \n"
     self.assertEqual(sampleCanvas.output(), string)
 
   # Output doesn't really do anything at the moment, could test stdin/stdout though
   def test_output(self):
+    sampleCanvas = canvas.Canvas(5,5,'ascii')
+    sampleCanvas.drawLine(0,4,0,0)
+    sampleOutput = output.Output(sampleCanvas)
     self.assertEqual(True, True)
 
 if __name__ == '__main__':

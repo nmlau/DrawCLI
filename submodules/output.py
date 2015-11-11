@@ -3,6 +3,9 @@ import pdb
 
 from submodules import canvas
 
-def output(canvas):
-  stdout = canvas.output()
-  print stdout
+class Output():
+  def __init__(self, canvas):
+    self.canvas = canvas
+  def put(self):
+    stdout = self.canvas.output();
+    print stdout
