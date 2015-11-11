@@ -32,10 +32,9 @@ class Canvas():
   def output(self):
     string = ''
     for x in range(self.width):
-      line = ''
       for y in range(self.height):
-        line += str(self.grid[y][x])
-      string += line + '\n'
+        string += str(self.grid[y][x])
+      string += '\n'
     return string
 
   def __init__(self, height, width, format):
