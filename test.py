@@ -74,10 +74,8 @@ class TestDraw(unittest.TestCase):
 
     # test horizontal
     sampleCanvas = canvas.Canvas(10,5,'ascii')
-    pdb.set_trace()
     sampleCanvas.drawLine(0,0,9,0)
     string = "+--------+\n          \n          \n          \n          \n"
-    print string
     self.assertEqual(sampleCanvas.output(), string)
 
     # test vertical

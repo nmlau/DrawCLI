@@ -4,9 +4,12 @@ from submodules import canvas
 
 class Shape():
   def draw(self):
-    return
-  def __init__(self, size):
-    self.size = size
+    return self.canvas
+  def __init__(self, input):
+    self.shape = input[0]
+    self.size = input[1]
+    self.format = input[2]
+    self.canvas = canvas.Canvas(self.size, self.size, self.format)
 
 class Spiral(Shape):
   def draw(self):
@@ -41,7 +44,6 @@ class Spiral(Shape):
     self.shape = input[0]
     self.size = input[1]
     self.format = input[2]
-    
     self.canvas = canvas.Canvas(self.size, self.size, self.format)
 
 class Square(Shape):
@@ -57,5 +59,4 @@ class Square(Shape):
     self.shape = input[0]
     self.size = input[1]
     self.format = input[2]
-
     self.canvas = canvas.Canvas(self.size, self.size, self.format)
